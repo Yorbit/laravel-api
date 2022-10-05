@@ -28,6 +28,9 @@ Route::resource("/categories", "Admin\CategoriesController");
 
 Route::resource("/tags", "Admin\TagsController");
 
+Route::get("{any?}", function() {
+    return view("guest.home");
+})->where("any", ".*");
 
 
 
