@@ -29,7 +29,7 @@
                                 <td>{{ $tag->id }}</td>
                                 <td><a href="{{ route('tags.show', $tag->id) }}">{{ $tag->name }}</a></td>
                                 <td class="d-flex">
-                                    <a href="{{ route('tags.edit', $tag->id) }}" class="btn btn-sm btn-success">Edit</a>
+                                    <a href="{{ route('tags.edit', $tag->id) }}" class="btn btn-sm btn-success">MODIFICA</a>
                                     <form action="{{ route('tags.destroy', $tag->id) }}" method="POST" class="delete-element-button">
                                         @csrf
                                         @method("DELETE")

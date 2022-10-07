@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,14 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 Auth::routes();
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource("/admin", "Admin\PostsController");
-
 Route::patch("/admin/{id}/patch", "Admin\PostsController@removeFromCategory")->name("admin.clear");
 
 Route::resource("/categories", "Admin\CategoriesController");
@@ -31,6 +27,3 @@ Route::resource("/tags", "Admin\TagsController");
 Route::get("{any?}", function() {
     return view("guest.home");
 })->where("any", ".*");
-
-
-

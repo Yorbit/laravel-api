@@ -21,3 +21,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get("/posts", "Api\PostController@index");
 
 Route::get("/posts/{id}", "Api\PostController@show");
+
+Route::get("/categories", "Api\CategoriesController@index");
+
+Route::get("/categories/{id}", "Api\CategoriesController@show");
+
+Route::get("/tags", "Api\TagsController@index");
+
+Route::get("/tags/{id}", "Api\TagsController@show");

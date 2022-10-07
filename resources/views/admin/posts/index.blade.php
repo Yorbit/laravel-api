@@ -15,7 +15,7 @@
                         <td>TITOLO</td>
                         <td>NOME UTENTE</td>
                         <td>DATA</td>
-                        <td>CATEGORY</td>
+                        <td>CATEGORIA</td>
                         <td></td>
                     </thead>
                     <tbody>
@@ -27,7 +27,7 @@
                                 <td>{{ $post->date }}</td>
                                 <td>{{ isset($post->category->name) ? $post->category->name : "-" }}</td>
                                 <td class="d-flex">
-                                    <a href='{{ route("admin.edit", $post->id) }}' class="btn btn-sm btn-success">Edit</a>
+                                    <a href='{{ route("admin.edit", $post->id) }}' class="btn btn-sm btn-success">MODIFICA</a>
                                     <form action='{{ route("admin.destroy", $post->id) }}' method="POST" class="delete-element-button">
                                         @csrf
                                         @method("DELETE")
